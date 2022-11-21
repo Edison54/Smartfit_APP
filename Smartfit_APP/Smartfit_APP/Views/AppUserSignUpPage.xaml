@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Smartfit_APP.Views.AppUserSignUpPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand" >
+            <!-- TO DO : Agregar imagen de usario default-->
+
+
+
+            <Entry  FontFamily="Josefinbold" x:Name="TxtNombre" Placeholder="Name" />
+            <Entry  FontFamily="Josefinbold" x:Name="TxtApellidos" Placeholder="Lastname" />
+            <Entry  FontFamily="Josefinbold" x:Name="TxtDireccion" Placeholder="Adress" />
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Gray" FontSize="15" HorizontalTextAlignment="Start" Text="Birth Date"  />
+            <DatePicker FontFamily="Josefinbold"  x:Name="TxtFechaNacimiento"  />
+            <Entry  FontFamily="Josefinbold" x:Name="TxtTelefono" Placeholder="Phone"/>
+            <Entry  FontFamily="Josefinbold" x:Name="TxtEmail" Placeholder="Email" />
+            <Entry  FontFamily="Josefinbold" x:Name="TxtPassword" Placeholder="Password" IsPassword="True" />
+
+
+
+
+
+            <Button x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="#0C61E4"  Clicked="BtnAdd_Clicked"/>
+
+            <Button x:Name="BtnCancel" Text="Cancel" FontSize="25"  CornerRadius="5" BackgroundColor="#0C61E4" Clicked="BtnCancel_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

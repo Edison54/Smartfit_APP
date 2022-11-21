@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Smartfit_APP.Views.AppLoginPage"
+    Shell.NavBarIsVisible = "False"
+    NavigationPage.HasNavigationBar ="False"
+             BackgroundImageSource="FondoSmartfit">
+<ContentPage.Content>
+
+
+  
+
+
+
+
+
+
+
+            <StackLayout Padding="50,0"  VerticalOptions="Start"  HorizontalOptions="FillAndExpand">
+            <Grid Padding="0" Margin="0,0,0,80">
+
+                <Image Grid.Row="0" Source="LogoSmartfit" HeightRequest="150" WidthRequest="150" Aspect="AspectFit"/>
+
+
+            </Grid>
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="30" HorizontalTextAlignment="Center" Text="Login" Margin="0,0,0,30" />
+
+            <Label FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalTextAlignment="Start" Text="Email"/>
+            <Entry x:Name="TxtCorreo"  FontSize="25" Keyboard="Email"  TextColor="Black"/>
+            <Label FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="20" HorizontalTextAlignment="Start" Text="Password"/>
+            <StackLayout Padding="0,0,0,50" Orientation="Horizontal"  Spacing="5" Margin="0" >
+                
+                <Entry x:Name="TxtPassword"  FontSize="25" Keyboard="Plain" IsPassword="True" TextColor="Black" WidthRequest="240"/>
+               
+                <StackLayout>
+                    <Switch x:Name="WatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
+                    <Label  FontFamily="Josefinbold" Text="Show password" FontSize="11" TextColor="Black" HorizontalTextAlignment="Center"/>
+                    
+                </StackLayout>
+                    
+            </StackLayout>
+
+
+
+            <Button FontFamily="Josefinbold" x:Name="BtnLogin" Text="Login" FontSize="20" CornerRadius="10" BackgroundColor="#A3F08C" Clicked="BtnLogin_Clicked" Margin="0,0,0,10"/>
+            <Button FontFamily="Josefinbold" x:Name="BtnSignUp" Text="Sign Up" FontSize="20"  CornerRadius="10" BackgroundColor="#0C61E4" Clicked="BtnSignUp_Clicked"/>
+        
+
+
+    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
