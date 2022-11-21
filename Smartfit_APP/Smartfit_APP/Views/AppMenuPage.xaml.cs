@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,20 @@ using Xamarin.Forms.Xaml;
 namespace Smartfit_APP.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AppMenuPage : ContentPage
+	public partial class AppMenuPage 
 	{
-		public AppMenuPage ()
+
+   
+
+   
+        public AppMenuPage ()
 		{
 			InitializeComponent ();
-		}
+
+
+
+
+
+        }
 	}
 }

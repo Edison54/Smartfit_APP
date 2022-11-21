@@ -19,7 +19,7 @@ namespace Smartfit_APP
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new AppCalendarPage());
+            MainPage = new NavigationPage(new AppMenuPage());
         }
 
         protected override void OnStart()

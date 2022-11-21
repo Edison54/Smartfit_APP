@@ -1,12 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Smartfit_APP.Views.AppMenuPage">
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Smartfit_APP.Views.AppMenuPage"
+             BackgroundImageSource="Menu">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        
+        
+        
+
+        <ScrollView >
+
+            <FlexLayout Direction="Column" 
+                        AlignItems="Center" 
+                        JustifyContent="Start">
+
+                <Image Grid.Row="0" Source="LogoSmartfit" HeightRequest="200" WidthRequest="300" Aspect="AspectFit"/>
+               
+
+
+                <Grid   RowSpacing="20" ColumnSpacing="20" Padding="0,10,0,0">
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Button  Grid.Row="0" Grid.Column="0" Text="Health"
+                           HeightRequest="180"  
+                           WidthRequest="180"   
+                           FontSize="17"
+                           HorizontalOptions="Center"
+                           CornerRadius="40" 
+                          
+                            TextColor="Black"    
+                              Background="transparent"
+                             BorderColor="Gray"
+                             BorderWidth ="1"
+                             ImageSource="iconhealth"
+                           />
+                    
+                    
+                    
+
+                    <Button  Grid.Row="0" Grid.Column="1" Text="Exercices"
+                           HeightRequest="180"  
+                           WidthRequest="180"   
+                           FontSize="17"
+                           HorizontalOptions="Center"
+                           CornerRadius="40" 
+                             TextColor="Black" 
+                              Background="transparent"
+                             BorderColor="Gray"
+                             BorderWidth ="1"
+                              ImageSource="iconExercices"
+                           />
+
+                    
+                    <Button  Grid.Row="1" Grid.Column="0" Text="Measures"
+                           HeightRequest="180"  
+                           WidthRequest="180"   
+                           FontSize="17"
+                           HorizontalOptions="Center"
+                           CornerRadius="40" 
+                           TextColor="Black"
+                              Background="transparent"
+                             BorderColor="Gray"
+                             BorderWidth ="1"
+                             ImageSource="iconMeasures"
+                             />
+
+                    <Button x:Name="BtnUserConfig"
+                        Grid.Row="1" Grid.Column="1" Text="Calendar"
+                           HeightRequest="180"  
+                           WidthRequest="180"   
+                           FontSize="17"
+                           HorizontalOptions="Center"
+                           CornerRadius="40" 
+                           TextColor="Black"
+                            Background="transparent"
+                             BorderColor="Gray"
+                             BorderWidth ="1"
+                             ImageSource="iconCalendar"
+                           />
+
+
+                </Grid>
+
+            </FlexLayout>
+
+
+
+
+        </ScrollView>
     </ContentPage.Content>
+
 </ContentPage>
