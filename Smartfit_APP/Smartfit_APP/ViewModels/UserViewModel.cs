@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MvvmHelpers;
+using Newtonsoft.Json;
+using RestSharp;
 using Smartfit_APP.Models;
+using Smartfit_APP.Models.DTOs;
 
 namespace Smartfit_APP.ViewModels
 {
@@ -13,11 +17,14 @@ namespace Smartfit_APP.ViewModels
        
 
         public Usuario MyUsuario { get; set; }
+
+        public UsuarioDTO MyUsuarioDTO { get; set; }
         public UserViewModel()
         {
           
          
             MyUsuario = new Usuario();
+            MyUsuarioDTO = new UsuarioDTO();
         }
 
 
@@ -68,7 +75,31 @@ namespace Smartfit_APP.ViewModels
             }
         }
 
+        public async Task<UsuarioDTO> GetUserData(string email)
+        {
 
+            try
+            {
+                UsuarioDTO user = new UsuarioDTO();
+
+
+                user = await MyUsuarioDTO.GetUserData(email);
+
+                if (user == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return user;
+                }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
 
 
         //funcion de ingreso al app del usuario

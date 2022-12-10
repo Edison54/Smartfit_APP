@@ -1,31 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Smartfit_APP.Views.AppCalendarPage"
-            xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar">
-    <ContentPage.Content>
-        <StackLayout>
+             xmlns:local="clr-namespace:CalendarXamarin"
+              xmlns:local2="clr-namespace:Smartfit_APP.ViewModels"
+             xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             x:Class="Smartfit_APP.Views.AppCalendarPage">
 
 
-        <controls:Calendar
-    Events="{Binding Events}">
-            <controls:Calendar.EventTemplate>
-                <DataTemplate>
-                    <StackLayout
-                Padding="15,0,0,0">
-                        <Label
-                    Text="{Binding Name}"
-                    FontAttributes="Bold"
-                    FontSize="Medium" />
-                        <Label
-                    Text="{Binding Description}"
-                    FontSize="Small"
-                    LineBreakMode="WordWrap" />
-                    </StackLayout>
-                </DataTemplate>
-            </controls:Calendar.EventTemplate>
-        </controls:Calendar>
 
+    
+    <ContentPage.BindingContext>
+
+       
+        <local2:CalendarViewModel x:Name="viewmodel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:AppointmentSelector x:Key="TemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout  >
+
+        <calendar:SfCalendar x:Name="calendar"
+                         DataSource="{Binding Appointments}" 
+                         OnCalendarTapped="calendar_OnCalendarTapped"
+                       
+                  
+                         ShowInlineEvents="true"
+                         InlineViewMode="Agenda"
+                             Margin="10,0"
+                             VerticalOptions="FillAndExpand">
+            <calendar:SfCalendar.MonthViewSettings>
+                <calendar:MonthViewSettings InlineItemTemplate="{StaticResource TemplateSelector} ">
+                </calendar:MonthViewSettings>
+            </calendar:SfCalendar.MonthViewSettings>
+        </calendar:SfCalendar>
+
+
+        <Button  FontAttributes="Bold"  x:Name="BtnAttend" Text="I attend" FontSize="20" CornerRadius="10" BackgroundColor="Blue" Clicked="BtnAttend_Clicked" Margin="60,10,60,5" />
+        <Button FontAttributes="Bold"  x:Name="BtnPaid" Text="I paid" FontSize="20" CornerRadius="10" BackgroundColor="#889e81" Clicked="BtnPaid_Clicked"  Margin="60,0,60,5"/>
+        <Button FontAttributes="Bold"  x:Name="BtnDel" Text="Delete" FontSize="20" CornerRadius="10" BackgroundColor="Red" Clicked="BtnDel_Clicked"  Margin="60,0,60,40"/>
     </StackLayout>
-    </ContentPage.Content>
+
+
+  
 </ContentPage>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"      
+              x:Class="Smartfit_APP.Views.AppUserMeasures"
+             BackgroundImageSource="SignUp">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand" >
+                <!-- TO DO : Agregar imagen de usario default-->
+
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="25" HorizontalTextAlignment="Start" Text="Your measures" Margin="0,0,50,0"  />
+
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="ID"  />
+                <Entry x:Name="TxtIdMeasure"  FontFamily="Josefinbold"
+                        IsReadOnly="true">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Height"  />
+                <Entry x:Name="TxtAltura"  FontFamily="Josefinbold" >
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Weight"  />
+                <Entry x:Name="TxtPeso"  FontFamily="Josefinbold">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                            
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Body fat %"  />
+                <Entry x:Name="TxtBodyFat"  FontFamily="Josefinbold" >
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Skeletal muscle weight"  />
+                <Entry x:Name="TxtSkeletalMuscle"  FontFamily="Josefinbold">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="30"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+
+              
+
+                <Button x:Name="BtnAdd" Text="Add/edit" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked"/>
+
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

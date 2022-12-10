@@ -44,6 +44,11 @@ namespace Smartfit_APP.Models
 
         public string Password { get; set; } = null!;
 
+        public virtual ICollection<ExercisesMachine> ExercisesMachines { get; set; }
+        public virtual ICollection<Measure> Measures { get; set; }
+        public virtual ICollection<MusclesMeasure> MusclesMeasures { get; set; }
+        public virtual ICollection<Pago> Pagos { get; set; } 
+
         public async Task<bool> AddUsuario()
         {
 
@@ -62,7 +67,15 @@ namespace Smartfit_APP.Models
                 request.AddHeader(contentype, mimetype);
 
                 //Tenemos que serializar la clase para poder enviarla a la api
-                string SerialClass = JsonConvert.SerializeObject(this);
+
+                var settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+
+
+
+
+                string SerialClass = JsonConvert.SerializeObject(this, settings);
+
 
                 request.AddBody(SerialClass, mimetype);
 
@@ -94,6 +107,16 @@ namespace Smartfit_APP.Models
             }
 
         }
+
+
+
+       
+
+
+
+
+
+
 
         public async Task<bool> ValidateLogin()
         {

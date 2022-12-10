@@ -26,5 +26,22 @@ namespace Smartfit_APP.Views
 
 
         }
-	}
+
+        private async void BtnCalendar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AppCalendarPage());
+        }
+
+
+
+        private async void BtnHealth_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AppUserMeasures());
+        }
+
+        private async void BtnMeasures_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AppUserMusclesMeasure());
+        }
+    }
 }

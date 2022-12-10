@@ -13,13 +13,13 @@ namespace Smartfit_APP
 
         public App()
         {
-         //   Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzYzOTU4QDMyMzAyZTMzMmUzMERIMTN4RGRkV3BvTld4UVZkK241K1BGOW1lWEhqMmFaWkdXeVdENk9ORk09");
+         Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzYzOTU4QDMyMzAyZTMzMmUzMERIMTN4RGRkV3BvTld4UVZkK241K1BGOW1lWEhqMmFaWkdXeVdENk9ORk09");
 
 
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new AppMenuPage());
+            MainPage = new NavigationPage(new AppLoginPage());
         }
 
         protected override void OnStart()

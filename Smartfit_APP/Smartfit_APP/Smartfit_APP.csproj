@@ -19,6 +19,7 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
 		<PackageReference Include="RestSharp" Version="108.0.2" />
+		<PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="20.3.0.58" />
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
 		<PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
 		<PackageReference Include="Xamarin.Plugin.Calendar" Version="2.0.9699" />
@@ -28,14 +29,20 @@
 	  <Compile Update="Views\AppUserSignUpPage.xaml.cs">
 	    <DependentUpon>AppUserSignUpPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\AppCalendarPage.xaml.cs">
+	    <DependentUpon>AppCalendarPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Update="Helper\AllDayAppointmentTemplate.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Helper\AppointmentTemplate.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
 		<EmbeddedResource Update="Views\ActionMenuPage.xaml">
 			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Views\AppCalendarPage.xaml">
-		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Views\AppLoginPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
@@ -43,8 +50,17 @@
 		<EmbeddedResource Update="Views\AppMenuPage.xaml">
 		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
+		<EmbeddedResource Update="Views\AppUserMeasures.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Views\AppUserMusclesMeasure.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
 		<EmbeddedResource Update="Views\AppUserSignUpPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Views\AppCalendarPage.xaml">
+		  <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
 		</EmbeddedResource>
 	</ItemGroup>
 

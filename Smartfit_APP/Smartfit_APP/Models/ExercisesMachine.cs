@@ -34,7 +34,7 @@ namespace Smartfit_APP.Models
 
         public string Tiempo { get; set; } = null!;
 
-
+        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
 
         public async Task<bool> AddExercisesMachine()
         {

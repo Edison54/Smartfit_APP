@@ -75,15 +75,31 @@ namespace Smartfit_APP.Views
             }
             else
             {
-                await DisplayAlert("validation error", "User and password is needed", "OK");
+                await DisplayAlert("Validation error", "User and password is needed", "OK");
                 return;
             }
         
 
             if (R)
             {
-                await Navigation.PushAsync(new AppCalendarPage());
+                try
+                {
+                    //todo: cargar info en un objeto global tipo user (o userDTO)
+                    GlobalObjects.GlobalUser = await vm.GetUserData(TxtCorreo.Text.Trim());
+               
+                
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "OK");
+                    return;
+                }
 
+
+
+                await Navigation.PushAsync(new AppMenuPage());
+                TxtCorreo.Text ="";
+                TxtPassword.Text = "";
                 //todo ; mostrar la page de seleccion de acciones del sistemas
             }
             else

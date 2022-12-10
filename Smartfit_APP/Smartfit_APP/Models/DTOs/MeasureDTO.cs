@@ -5,58 +5,51 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Smartfit_APP.Services;
-using System.Collections.ObjectModel;
-using Smartfit_APP.Models.DTOs;
 
-namespace Smartfit_APP.Models
+namespace Smartfit_APP.Models.DTOs
 {
-    public partial class MusclesMeasure
+    public partial class MeasureDTO
     {
+
         public RestRequest request { get; set; }
         const string mimetype = "application/json";
         const string contentype = "Content-Type";
 
 
 
-        public MusclesMeasure()
-        {
-           
-        }
-        public int IdMuscle { get; set; }
+      
+
+        public int IdMeasure { get; set; }
 
         public int IdUsuario { get; set; }
 
-        public string Musculo { get; set; } = null!;
+        public decimal Altura { get; set; }
 
-        public decimal Medida { get; set; }
+        public decimal Peso { get; set; }
 
-        public DateTime FechaMedida { get; set; }
+        public decimal BodyFat { get; set; }
 
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        public decimal SkeletalMuscle { get; set; }
 
-
-        public async Task<bool> AddMusclesMeasure()
+        public async Task<MeasureDTO> GetMeasureData(int IdUsuario)
         {
 
             try
             {
-                string RouteSufix = string.Format("MusclesMeasures");
+                string RouteSufix = string.Format("Measures/GetUserMeasure?userid={0}",
+                    IdUsuario);
                 string FinalURL = Services.CnnToSmartFitAPI.ProductionURL + RouteSufix;
 
                 RestClient client = new RestClient(FinalURL);
 
-                request = new RestRequest(FinalURL, Method.Post);
+                request = new RestRequest(FinalURL, Method.Get);
 
                 //agregar la info de seguridad del api , aqui va la apikey
 
                 request.AddHeader(Services.CnnToSmartFitAPI.ApiKeyName, Services.CnnToSmartFitAPI.ApiKeyValue);
                 request.AddHeader(contentype, mimetype);
 
-                //Tenemos que serializar la clase para poder enviarla a la api
-                string SerialClass = JsonConvert.SerializeObject(this);
 
-                request.AddBody(SerialClass, mimetype);
 
                 RestResponse response = await client.ExecuteAsync(request);
 
@@ -65,15 +58,18 @@ namespace Smartfit_APP.Models
                 //carga de info en un json
 
 
-                if (statusCode == HttpStatusCode.Created)
+                if (statusCode == HttpStatusCode.OK)
                 {
                     //carga de info en un json
+                    var list = JsonConvert.DeserializeObject<List<MeasureDTO>>(response.Content);
+                    var item = list[0];
 
-                    return true;
+
+                    return item;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -87,9 +83,6 @@ namespace Smartfit_APP.Models
 
         }
 
-   
-
-
 
 
 
@@ -100,4 +93,3 @@ namespace Smartfit_APP.Models
 
     }
 }
-

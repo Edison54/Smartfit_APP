@@ -26,15 +26,13 @@ namespace Smartfit_APP.Models
 
         public int IdUsuario { get; set; }
 
-        public decimal Altura { get; set; }
+        public DateTime? FechaPago { get; set; }
 
-        public decimal Peso { get; set; }
+        public string Estado { get; set; }
 
-        public decimal Grasa { get; set; }
+        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
 
-        public decimal GrasaViseral { get; set; }
 
-      
         public async Task<bool> AddPago()
         {
 

@@ -37,7 +37,7 @@
 
 
 
-                    <Button  Grid.Row="0" Grid.Column="0" Text="Health"
+                    <Button x:Name="BtnHealth"  Grid.Row="0" Grid.Column="0" Text="Health"
                            HeightRequest="180"  
                            WidthRequest="180"   
                            FontSize="17"
@@ -49,12 +49,14 @@
                              BorderColor="Gray"
                              BorderWidth ="1"
                              ImageSource="iconhealth"
+                            Clicked="BtnHealth_Clicked"
                            />
-                    
-                    
-                    
 
-                    <Button  Grid.Row="0" Grid.Column="1" Text="Exercices"
+
+
+
+                    <Button x:Name="BtnExercices" 
+                        Grid.Row="0" Grid.Column="1" Text="Exercices"
                            HeightRequest="180"  
                            WidthRequest="180"   
                            FontSize="17"
@@ -67,8 +69,9 @@
                               ImageSource="iconExercices"
                            />
 
-                    
-                    <Button  Grid.Row="1" Grid.Column="0" Text="Measures"
+
+                    <Button  x:Name="BtnMeasures"
+                        Grid.Row="1" Grid.Column="0" Text="Measures"
                            HeightRequest="180"  
                            WidthRequest="180"   
                            FontSize="17"
@@ -79,9 +82,11 @@
                              BorderColor="Gray"
                              BorderWidth ="1"
                              ImageSource="iconMeasures"
+                             Clicked="BtnMeasures_Clicked"
+                           
                              />
 
-                    <Button x:Name="BtnUserConfig"
+                    <Button x:Name="BtnCalendar"
                         Grid.Row="1" Grid.Column="1" Text="Calendar"
                            HeightRequest="180"  
                            WidthRequest="180"   
@@ -93,6 +98,7 @@
                              BorderColor="Gray"
                              BorderWidth ="1"
                              ImageSource="iconCalendar"
+                            Clicked="BtnCalendar_Clicked"
                            />
 
 
