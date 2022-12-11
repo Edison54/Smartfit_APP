@@ -10,7 +10,8 @@ namespace Smartfit_APP
     {
         public static UsuarioDTO GlobalUser = new UsuarioDTO();
 
-        
+        public static MuscleMeasuresDTO GlobalMeasure = new MuscleMeasuresDTO();
+
 
     }
 }

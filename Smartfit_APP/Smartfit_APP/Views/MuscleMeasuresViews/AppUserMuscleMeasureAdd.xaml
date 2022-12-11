@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Smartfit_APP.Views.MuscleMeasuresViews.AppUserMuscleMeasureAdd">
+    <ContentPage.Content>
+        <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand">
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="25" HorizontalTextAlignment="Start" Text="Add your muscle measure " Margin="0,0,100,0"  />
+
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Muscle"  />
+            <Entry x:Name="TxtMusculo"  FontFamily="Josefinbold">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Measure"  />
+            <Entry x:Name="TxtMedida"  FontFamily="Josefinbold" >
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Date of the measure"  />
+
+            <DatePicker FontFamily="Josefinbold"  x:Name="TxtFechaMedida"  />
+
+
+
+
+            <Button x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked" />
+
+
+
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

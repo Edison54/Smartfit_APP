@@ -57,8 +57,13 @@ namespace Smartfit_APP.Models
                 request.AddHeader(Services.CnnToSmartFitAPI.ApiKeyName, Services.CnnToSmartFitAPI.ApiKeyValue);
                 request.AddHeader(contentype, mimetype);
 
-                //Tenemos que serializar la clase para poder enviarla a la api
-                string SerialClass = JsonConvert.SerializeObject(this);
+                var settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+
+
+
+
+                string SerialClass = JsonConvert.SerializeObject(this, settings);
 
                 request.AddBody(SerialClass, mimetype);
 
@@ -114,14 +119,7 @@ namespace Smartfit_APP.Models
                 var settings = new JsonSerializerSettings();
                 settings.NullValueHandling = NullValueHandling.Ignore;
 
-
-
-
-
-
-
-
-                //Tenemos que serializar la clase para poder enviarla a la api
+  //Tenemos que serializar la clase para poder enviarla a la api
                 string SerialClass = JsonConvert.SerializeObject(this, settings);
 
                 request.AddBody(SerialClass, mimetype);

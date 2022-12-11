@@ -65,7 +65,7 @@ namespace Smartfit_APP.Views
                 }
                 if (TxtDireccion.Text == null || string.IsNullOrEmpty(TxtDireccion.Text.Trim()))
                 {
-                    DisplayAlert("Validation error", "Your addres  is needed", "OK");
+                    DisplayAlert("Validation error", "Your address  is needed", "OK");
                     TxtDireccion.Focus();
                     return false;
                 }
@@ -97,8 +97,22 @@ namespace Smartfit_APP.Views
 
 
 
+
+
+
+
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
+
+
+            bool A = false;
+
+            A = await viewModel.GetEmailValidation(TxtEmail.Text.Trim());
+
+            if(A == false) { 
+
+
+
             if (UserImputValidation())
             {
 
@@ -134,6 +148,11 @@ namespace Smartfit_APP.Views
                         await DisplayAlert("Failed", "error trying to establish connection to the server", "OK");
                     }
                 }
+            }
+            }
+            else
+            {
+                await DisplayAlert("Failed", "You can use and email that other used", "OK");
             }
         }
     }

@@ -101,6 +101,33 @@ namespace Smartfit_APP.ViewModels
             }
         }
 
+        public async Task<bool> GetEmailValidation(string email)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+
+
+                bool R = await MyUsuarioDTO.GetUserEmail(email);
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+
+
+        }
+
+
 
         //funcion de ingreso al app del usuario
 

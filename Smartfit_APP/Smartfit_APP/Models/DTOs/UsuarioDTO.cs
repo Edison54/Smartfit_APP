@@ -100,7 +100,54 @@ namespace Smartfit_APP.Models.DTOs
         }
 
 
+        public async Task<bool> GetUserEmail(string correo)
+        {
 
+            try
+            {
+                string RouteSufix = string.Format("Usuarios/GetUserEmail?email={0}",
+                    correo);
+                string FinalURL = Services.CnnToSmartFitAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api , aqui va la apikey
+
+                request.AddHeader(Services.CnnToSmartFitAPI.ApiKeyName, Services.CnnToSmartFitAPI.ApiKeyValue);
+                request.AddHeader(contentype, mimetype);
+
+
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                //carga de info en un json
+
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    //carga de info en un json
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                string msg = ex.Message;
+
+                //to do guardar errores en una bitacora.
+                throw;
+            }
+
+        }
 
 
 

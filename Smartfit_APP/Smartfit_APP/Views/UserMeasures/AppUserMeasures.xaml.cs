@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Smartfit_APP.Models.DTOs;
+using System.Runtime.InteropServices.ComTypes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Smartfit_APP.Views
 {
@@ -152,13 +154,41 @@ namespace Smartfit_APP.Views
         }
         private bool UserImputValidation()
         {
+            decimal TEST ;
             bool R = false;
             if (TxtAltura.Text != null && !string.IsNullOrEmpty(TxtAltura.Text.Trim()) &&
                TxtPeso.Text != null && !string.IsNullOrEmpty(TxtPeso.Text.Trim()) &&
                TxtBodyFat.Text != null && !string.IsNullOrEmpty(TxtBodyFat.Text.Trim()) &&
                TxtSkeletalMuscle.Text != null && !string.IsNullOrEmpty(TxtSkeletalMuscle.Text.Trim()))
-
             {
+
+
+
+                if (decimal.TryParse(TxtAltura.Text, out TEST) == false)
+                {
+                    DisplayAlert("Validation error", "Your height should be a number", "OK");
+                    TxtAltura.Focus();
+                    return false; 
+                }
+                if (decimal.TryParse(TxtPeso.Text, out TEST) == false)
+                {
+                    DisplayAlert("Validation error", "Your Weight should be a number", "OK");
+                    TxtPeso.Focus();
+                    return false;
+                }
+                if (decimal.TryParse(TxtBodyFat.Text, out TEST) == false)
+                {
+                    DisplayAlert("Validation error", "Your Body Fat should be a number", "OK");
+                    TxtBodyFat.Focus();
+                    return false;
+                }
+                if (decimal.TryParse(TxtSkeletalMuscle.Text, out TEST) == false)
+                {
+                    DisplayAlert("Validation error", "Your skeletal muscle should be a number", "OK");
+                    TxtSkeletalMuscle.Focus();
+                    return false;
+                }
+
                 R = true;
 
             }
@@ -189,7 +219,11 @@ namespace Smartfit_APP.Views
                     TxtSkeletalMuscle.Focus();
                     return false;
                 }
+
+ 
               
+
+
 
             }
 

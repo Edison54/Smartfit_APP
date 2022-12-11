@@ -72,6 +72,7 @@ namespace Smartfit_APP.Views
                     UserDialogs.Instance.HideLoading();
                 }
 
+               
             }
             else
             {
