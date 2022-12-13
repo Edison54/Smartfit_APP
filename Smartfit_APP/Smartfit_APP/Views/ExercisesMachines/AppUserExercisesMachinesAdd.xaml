@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Smartfit_APP.Views.ExercisesMachines.AppUserExercisesMachinesAdd"
+              BackgroundImageSource="FondoSmartfit">
+    <ContentPage.Content>
+        <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand">
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="25" HorizontalTextAlignment="Start" Text="Add your exercise " Margin="0,0,100,0"  />
+
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" 
+                    Text="Name of the exercise"  />
+            <Entry x:Name="TxtNameExercise"  FontFamily="Josefinbold">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15"
+                    HorizontalTextAlignment="Start" Text="Weight used"  />
+            <Entry x:Name="TxtPeso"  FontFamily="Josefinbold" >
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start"
+                    Text="Repetitions"  />
+            <Entry x:Name="TxtCantidadRepeticiones"  FontFamily="Josefinbold" >
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start"
+                    Text="Time"  />
+            <Entry x:Name="TxtTiempo"  FontFamily="Josefinbold" >
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+          
+
+
+
+
+
+            <Button x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked" />
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

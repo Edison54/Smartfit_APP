@@ -78,13 +78,57 @@ namespace Smartfit_APP.Models.DTOs
 
         }
 
+        public async Task<bool> Delete(int MuscleID)
+        {
+
+            try
+            {
+                string RouteSufix = string.Format("MusclesMeasures/{0}",
+                    MuscleID);
+                string FinalURL = Services.CnnToSmartFitAPI.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Delete);
+
+                //agregar la info de seguridad del api , aqui va la apikey
+
+                request.AddHeader(Services.CnnToSmartFitAPI.ApiKeyName, Services.CnnToSmartFitAPI.ApiKeyValue);
+                request.AddHeader(contentype, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                //carga de info en un json
+
+
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                   return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                string msg = ex.Message;
+
+                //to do guardar errores en una bitacora.
+                throw;
+            }
+
+        }
 
         public async Task<MuscleMeasuresDTO> GetUserMuscleData(int MuscleID)
         {
 
             try
             {
-                string RouteSufix = string.Format("GetMuscleData?MuscleID={0}",
+                string RouteSufix = string.Format("MusclesMeasures/GetMuscleData?MuscleID={0}",
                     MuscleID);
                 string FinalURL = Services.CnnToSmartFitAPI.ProductionURL + RouteSufix;
 

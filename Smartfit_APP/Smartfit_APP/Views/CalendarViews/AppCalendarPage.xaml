@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:CalendarXamarin"
               xmlns:local2="clr-namespace:Smartfit_APP.ViewModels"
              xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
-             x:Class="Smartfit_APP.Views.AppCalendarPage">
+             x:Class="Smartfit_APP.Views.AppCalendarPage"
+              BackgroundImageSource="SignUp">
 
 
 
@@ -39,7 +40,7 @@
 
 
         <Button  FontAttributes="Bold"  x:Name="BtnAttend" Text="I attend" FontSize="20" CornerRadius="10" BackgroundColor="Blue" Clicked="BtnAttend_Clicked" Margin="60,10,60,5" />
-        <Button FontAttributes="Bold"  x:Name="BtnPaid" Text="I paid" FontSize="20" CornerRadius="10" BackgroundColor="#889e81" Clicked="BtnPaid_Clicked"  Margin="60,0,60,5"/>
+        <Button FontAttributes="Bold"  x:Name="BtnPaid" Text="I paid" FontSize="20" CornerRadius="10" BackgroundColor="#FF008000" Clicked="BtnPaid_Clicked"  Margin="60,0,60,5"/>
         <Button FontAttributes="Bold"  x:Name="BtnDel" Text="Delete" FontSize="20" CornerRadius="10" BackgroundColor="Red" Clicked="BtnDel_Clicked"  Margin="60,0,60,40"/>
     </StackLayout>
 

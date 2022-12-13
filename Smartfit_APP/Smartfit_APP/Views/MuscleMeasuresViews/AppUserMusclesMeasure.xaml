@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Smartfit_APP.Views.AppUserMusclesMeasure">
+             x:Class="Smartfit_APP.Views.AppUserMusclesMeasure"
+               BackgroundImageSource="SignUp">
     <ContentPage.Content>
 
 
@@ -10,20 +11,20 @@
 
 
         <StackLayout Padding="20,50,20,0" HorizontalOptions="FillAndExpand">
-        <ScrollView>
-            <StackLayout >
-                <Label Text="Measure list"
+            <Label Text="Muscles measures list:"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"  FontFamily="Josefinbold"  FontSize="30" TextColor="Black"/>
-                
-                <Label Text="Muscles names and CM measure: "
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand"  FontFamily="Josefinbold"  TextColor="Black" FontSize="20"/>
+            
+            <ScrollView>
+            <StackLayout >
+           
 
 
 
 
-                <ListView x:Name="LstMeasure" RowHeight="100" SelectionMode="None" >
+
+
+                    <ListView x:Name="LstMeasure" RowHeight="100" SelectionMode="None"  ItemTapped="LstMeasure_ItemTapped">
                     
 
                     <ListView.ItemTemplate >
@@ -31,7 +32,7 @@
 
                         <DataTemplate >
 
-                            <ViewCell Tapped="ViewCell_Tapped"  >
+                            <ViewCell >
                                 <Grid VerticalOptions="Center" HorizontalOptions="Start"  >
                                     <StackLayout Margin="0,0,0,0">
 
@@ -58,14 +59,16 @@
                                     
                                     <StackLayout Margin="0,64,0,0" WidthRequest="100">
 
-                                        <Label  Text="ID Muscle:"  FontSize="15" TextColor="Black"/>
+                                        <Label  Text="Date of the measure:"  FontSize="15" TextColor="Black"/>
 
                                     </StackLayout>
 
                                     <StackLayout Margin="0,80,0,0">
-                                        <Label Text="{Binding IdMuscle}" FontSize="15" />
+                                            <Label Text="{Binding FechaMedida}" FontSize="15" />
 
                                     </StackLayout>
+                                    
+                                    
 
                                     
                                 </Grid>
@@ -90,7 +93,7 @@
         </ScrollView>
 
         <StackLayout Margin="0,0,0,20" >
-                <Button x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked"/>
+                <Button FontFamily="Josefinbold" x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked"/>
             </StackLayout>
 
 

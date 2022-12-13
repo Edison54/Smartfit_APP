@@ -122,6 +122,38 @@ namespace Smartfit_APP.ViewModels
             }
         }
 
+        
+
+        public async Task<bool> Delete(int muscleID)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+
+
+                bool R = await MyMusclesMeasureDTO.Delete(muscleID);
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+
+
+        }
+
+
+
+
+
 
 
 

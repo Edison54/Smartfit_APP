@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Smartfit_APP.Views.MuscleMeasuresViews.AppUserMuscleMeasureAdd">
+             x:Class="Smartfit_APP.Views.MuscleMeasuresViews.AppUserMuscleMeasureAdd"
+               BackgroundImageSource="SignUp">
     <ContentPage.Content>
         <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand">
 
@@ -43,7 +44,7 @@
 
 
 
-            <Button x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked" />
+            <Button FontFamily="Josefinbold" x:Name="BtnAdd" Text="Add" FontSize="25"  CornerRadius="5" BackgroundColor="Green" Clicked="BtnAdd_Clicked" />
 
 
 

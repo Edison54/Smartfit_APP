@@ -21,9 +21,17 @@ namespace Smartfit_APP.Views.MuscleMeasuresViews
         public MusclesMeasure MyMuscleMeasures { get; set; }
         public AppUserMuscleMeasureAdd()
         {
+           
+
+
+
+
+
+
             MyMuscleMeasures = new MusclesMeasure();
             InitializeComponent();
             BindingContext = MuscleVM = new MusclesMeasureViewModel();
+            LoadUserMuscleMeasures();
         }
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
@@ -51,6 +59,7 @@ namespace Smartfit_APP.Views.MuscleMeasuresViews
                     if (R)
                     {
                         await DisplayAlert("Success", "Your data was Saved", "OK");
+                       
                         await Navigation.PopAsync();
 
                     }
@@ -62,6 +71,21 @@ namespace Smartfit_APP.Views.MuscleMeasuresViews
             }
         }
 
+        private  void LoadUserMuscleMeasures()
+        {
+
+
+
+
+            TxtMusculo.Text = "0";
+            TxtMedida.Text = "0";
+            
+
+
+
+
+
+        }
 
         private bool UserImputValidation()
         {
@@ -71,9 +95,6 @@ namespace Smartfit_APP.Views.MuscleMeasuresViews
                TxtMedida.Text != null && !string.IsNullOrEmpty(TxtMedida.Text.Trim()))
             {
 
-
-
-              
 
                 if (decimal.TryParse(TxtMedida.Text, out TEST) == false)
                 {

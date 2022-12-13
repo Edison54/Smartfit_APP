@@ -75,6 +75,7 @@ namespace Smartfit_APP.Views
                     calendarInlineEvent.StartTime = e.DateTime.Date.AddHours(1);
                     calendarInlineEvent.EndTime = e.DateTime.Date.AddHours(2);
                     calendarInlineEvent.Subject = "I attend";
+                    calendarInlineEvent.Color = Color.FromHex("#FF0000FF");
                     viewmodel.Appointments.Add(calendarInlineEvent);
                     attend = false;
 
@@ -85,7 +86,7 @@ namespace Smartfit_APP.Views
                     calendarInlineEvent.EndTime = e.DateTime.Date.AddHours(2);
                     calendarInlineEvent.Subject = "I paid";
 
-                    calendarInlineEvent.Color = Color.FromHex("889e81");
+                    calendarInlineEvent.Color = Color.FromHex("#FF008000");
                     viewmodel.Appointments.Add(calendarInlineEvent);
                     paid = false;
 

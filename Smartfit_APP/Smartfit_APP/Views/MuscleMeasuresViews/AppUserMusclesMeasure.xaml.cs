@@ -1,6 +1,7 @@
 ﻿using Smartfit_APP.Models;
 using Smartfit_APP.Models.DTOs;
 using Smartfit_APP.ViewModels;
+using Smartfit_APP.Views.ExercisesMachines;
 using Smartfit_APP.Views.MuscleMeasuresViews;
 using System;
 using System.Collections.Generic;
@@ -18,25 +19,31 @@ namespace Smartfit_APP.Views
     public partial class AppUserMusclesMeasure : ContentPage
     {
 
-
+      
 
         MusclesMeasureViewModel VM;
         public MuscleMeasuresDTO MyMuscleMeasuresDTO { get; set; }
 
+        
         public AppUserMusclesMeasure()
         {
-
+           
 
 
             MyMuscleMeasuresDTO = new MuscleMeasuresDTO();
             InitializeComponent();
             BindingContext = VM = new MusclesMeasureViewModel();
             LoadItemList();
-            
-
+           
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
+            LoadItemList();
+
+        }
 
         private async void LoadItemList()
         {
@@ -45,41 +52,28 @@ namespace Smartfit_APP.Views
             
         }
 
-        private void LstMeasure_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-          
-        }
+      
 
 
-        
+     
 
-        private async void ViewCell_Tapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AppUserMuscleMeasuresEdit());
-        }
+       
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AppUserMuscleMeasureAdd());
-            
+           
         }
 
+        private async void LstMeasure_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
 
+            var selectedItem = e.Item as MuscleMeasuresDTO;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if (selectedItem != null)
+            {
+                await Navigation.PushAsync(new AppUserMuscleMeasuresEdit(selectedItem.IdMuscle));
+            }
+        }
     }
 }   

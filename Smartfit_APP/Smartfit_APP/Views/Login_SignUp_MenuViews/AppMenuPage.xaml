@@ -67,7 +67,7 @@
                              BorderColor="Gray"
                              BorderWidth ="1"
                               ImageSource="iconExercices"
-                           />
+                           Clicked="BtnExercices_Clicked"/>
 
 
                     <Button  x:Name="BtnMeasures"

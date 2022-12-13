@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smartfit_APP.Views.ExercisesMachines;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace Smartfit_APP.Views
         private async void BtnMeasures_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AppUserMusclesMeasure());
+        }
+
+        private async void BtnExercices_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AppUserExercisesMachines());
         }
     }
 }

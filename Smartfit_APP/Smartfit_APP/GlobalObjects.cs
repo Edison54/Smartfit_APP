@@ -12,6 +12,8 @@ namespace Smartfit_APP
 
         public static MuscleMeasuresDTO GlobalMeasure = new MuscleMeasuresDTO();
 
+       
+
 
     }
 }

@@ -21,17 +21,19 @@ namespace Smartfit_APP.Views
         MusclesMeasureViewModel MuscleVM;
 
 
-
+        int IdMuscle;
         public MuscleMeasuresDTO MyMuscleMeasuresDTO { get; set; }
-        public AppUserMuscleMeasuresEdit()
-        {
 
+
+        public AppUserMuscleMeasuresEdit(int id)
+        {
+            IdMuscle = id;
             MyMuscleMeasuresDTO = new MuscleMeasuresDTO();
 
             InitializeComponent();
 
             BindingContext = MuscleVM = new MusclesMeasureViewModel();
-           // LoadUserMuscleMeasures()
+            LoadUserMuscleMeasures(IdMuscle);
         }
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
@@ -74,11 +76,11 @@ namespace Smartfit_APP.Views
 
 
 
-        private async void LoadUserMuscleMeasures()
+        private async void LoadUserMuscleMeasures(int id)
         {
 
 
-            MyMuscleMeasuresDTO = await MuscleVM.GetUserMusclesData(GlobalObjects.GlobalMeasure.IdMuscle);
+            MyMuscleMeasuresDTO = await MuscleVM.GetUserMusclesData(id);
                 TxtIdMuscle.Text = MyMuscleMeasuresDTO.IdMuscle.ToString();
                 TxtMusculo.Text = MyMuscleMeasuresDTO.IdUsuario.ToString();
                 TxtMedida.Text = MyMuscleMeasuresDTO.Medida.ToString();
@@ -106,23 +108,9 @@ namespace Smartfit_APP.Views
             {
 
 
-
-                if (decimal.TryParse(TxtIdMuscle.Text, out TEST) == false)
-                {
-                    DisplayAlert("Validation error", "Your height should be a number", "OK");
-                    TxtIdMuscle.Focus();
-                    return false;
-                }
-            
-                if (decimal.TryParse(TxtMusculo.Text, out TEST) == false)
-                {
-                    DisplayAlert("Validation error", "Your Body Fat should be a number", "OK");
-                    TxtMusculo.Focus();
-                    return false;
-                }
                 if (decimal.TryParse(TxtMedida.Text, out TEST) == false)
                 {
-                    DisplayAlert("Validation error", "Your skeletal muscle should be a number", "OK");
+                    DisplayAlert("Validation error", "Your muscle measure should be a number", "OK");
                     TxtMedida.Focus();
                     return false;
                 }
@@ -133,24 +121,23 @@ namespace Smartfit_APP.Views
             else
             {
 
-                if (TxtIdMuscle.Text == null || string.IsNullOrEmpty(TxtIdMuscle.Text.Trim()))
-                {
-                    DisplayAlert("Validation error", "Your heigt is needed", "OK");
-                    TxtIdMuscle.Focus();
-                    return false;
-                }
+
                 if (TxtMusculo.Text == null || string.IsNullOrEmpty(TxtMusculo.Text.Trim()))
                 {
-                    DisplayAlert("Validation error", "Your  % body fat is needed", "OK");
+                    DisplayAlert("Validation error", "Your muscle name is needed", "OK");
                     TxtMusculo.Focus();
                     return false;
                 }
                 if (TxtMedida.Text == null || string.IsNullOrEmpty(TxtMedida.Text.Trim()))
                 {
-                    DisplayAlert("Validation error", "Your skeletal muscle weight is  needed", "OK");
+                    DisplayAlert("Validation error", "Your muscle measure is  needed", "OK");
                     TxtMedida.Focus();
                     return false;
                 }
+
+
+
+
 
 
 
@@ -162,5 +149,34 @@ namespace Smartfit_APP.Views
             return R;
         }
 
+      
+
+        private async void BtnDelete_Clicked(object sender, EventArgs e)
+        {
+
+            var answer = await DisplayAlert("You want to delete this muscle", "Are you sure?", "Yes", "No");
+
+            if (answer)
+            {
+
+                bool R = await MuscleVM.Delete(Int32.Parse(TxtIdMuscle.Text.Trim()));
+       
+
+                if (R)
+                {
+                    await DisplayAlert("Success", "Your Muscle was deleted", "OK");
+                    await Navigation.PopAsync();
+
+                }
+                else
+                {
+                    await DisplayAlert("Failed", "error trying to establish connection to the server", "OK");
+                }
+            }
+        }
     }
+       
 }
+
+
+
