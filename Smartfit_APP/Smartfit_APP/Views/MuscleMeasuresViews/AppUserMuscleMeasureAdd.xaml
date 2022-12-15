@@ -25,7 +25,7 @@
 
 
 
-            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Measure"  />
+            <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Measure in CM"  />
             <Entry x:Name="TxtMedida"  FontFamily="Josefinbold" >
                 <Entry.Triggers>
                     <Trigger TargetType="Entry" Property="IsFocused" Value="True">

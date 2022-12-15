@@ -26,7 +26,7 @@
                 </Entry>
 
 
-                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Height"  />
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Height "  />
                 <Entry x:Name="TxtAltura"  FontFamily="Josefinbold" >
                     <Entry.Triggers>
                         <Trigger TargetType="Entry" Property="IsFocused" Value="True">
@@ -37,7 +37,7 @@
                     </Entry.Triggers>
                 </Entry>
 
-                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Weight"  />
+                <Label  FontFamily="Josefinbold" Grid.Row="1" FontAttributes="Bold" TextColor="Black" FontSize="15" HorizontalTextAlignment="Start" Text="Weight in KG"  />
                 <Entry x:Name="TxtPeso"  FontFamily="Josefinbold">
                     <Entry.Triggers>
                         <Trigger TargetType="Entry" Property="IsFocused" Value="True">

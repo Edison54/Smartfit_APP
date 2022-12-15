@@ -82,7 +82,7 @@ namespace Smartfit_APP.Views
 
             MyMuscleMeasuresDTO = await MuscleVM.GetUserMusclesData(id);
                 TxtIdMuscle.Text = MyMuscleMeasuresDTO.IdMuscle.ToString();
-                TxtMusculo.Text = MyMuscleMeasuresDTO.IdUsuario.ToString();
+                TxtMusculo.Text = MyMuscleMeasuresDTO.Musculo.ToString();
                 TxtMedida.Text = MyMuscleMeasuresDTO.Medida.ToString();
                 TxtFechaMedida.Date = MyMuscleMeasuresDTO.FechaMedida;
 
