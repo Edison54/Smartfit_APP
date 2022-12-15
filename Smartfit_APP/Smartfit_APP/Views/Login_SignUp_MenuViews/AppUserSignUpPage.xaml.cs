@@ -105,24 +105,27 @@ namespace Smartfit_APP.Views
         {
 
 
+
             bool A = false;
-
-            A = await viewModel.GetEmailValidation(TxtEmail.Text.Trim());
-
-            if(A == false) { 
-
 
 
             if (UserImputValidation())
             {
 
 
+           
+
+                A = await viewModel.GetEmailValidation(TxtEmail.Text.Trim());
+
+                if (A == false)
+                {
 
 
-                //EN ESTE CASO LA LLAMADA A LA
-                //FUNCIONALIDAD NO SERA POR COMMAND
-                //TO DO IMPLEMENTAR COMMAND
-                var answer = await DisplayAlert("You want to create your account", "Are you sure?", "Yes", "No");
+
+                    //EN ESTE CASO LA LLAMADA A LA
+                    //FUNCIONALIDAD NO SERA POR COMMAND
+                    //TO DO IMPLEMENTAR COMMAND
+                    var answer = await DisplayAlert("You want to create your account", "Are you sure?", "Yes", "No");
 
                 if (answer)
                 {
@@ -149,11 +152,12 @@ namespace Smartfit_APP.Views
                     }
                 }
             }
+                else
+                {
+                    await DisplayAlert("Failed", "You can use and email that other used", "OK");
+                }
             }
-            else
-            {
-                await DisplayAlert("Failed", "You can use and email that other used", "OK");
-            }
+           
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Smartfit_APP
 
         public App()
         {
+            //KEY CALENDARIO
          Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzYzOTU4QDMyMzAyZTMzMmUzMERIMTN4RGRkV3BvTld4UVZkK241K1BGOW1lWEhqMmFaWkdXeVdENk9ORk09");
 
 

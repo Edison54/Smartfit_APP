@@ -47,7 +47,7 @@ namespace Smartfit_APP.Views.ExercisesMachines
                 //EN ESTE CASO LA LLAMADA A LA
                 //FUNCIONALIDAD NO SERA POR COMMAND
                 //TO DO IMPLEMENTAR COMMAND
-                var answer = await DisplayAlert("You want to add your muscle data", "Are you sure?", "Yes", "No");
+                var answer = await DisplayAlert("You want to add your exercise data", "Are you sure?", "Yes", "No");
                 if (answer)
                 {
 

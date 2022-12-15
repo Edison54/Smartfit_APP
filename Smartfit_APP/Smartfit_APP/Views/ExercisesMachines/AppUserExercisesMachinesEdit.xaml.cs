@@ -47,7 +47,7 @@ namespace Smartfit_APP.Views.ExercisesMachines
                 //EN ESTE CASO LA LLAMADA A LA
                 //FUNCIONALIDAD NO SERA POR COMMAND
                 //TO DO IMPLEMENTAR COMMAND
-                var answer = await DisplayAlert("You want to update your muscle data", "Are you sure?", "Yes", "No");
+                var answer = await DisplayAlert("You want to update your exercise data", "Are you sure?", "Yes", "No");
                 if (answer)
                 {
 
@@ -77,7 +77,7 @@ namespace Smartfit_APP.Views.ExercisesMachines
 
         private async void BtnDelete_Clicked(object sender, EventArgs e)
         {
-            var answer = await DisplayAlert("You want to delete this muscle", "Are you sure?", "Yes", "No");
+            var answer = await DisplayAlert("You want to delete this exercise", "Are you sure?", "Yes", "No");
 
             if (answer)
             {
@@ -87,7 +87,7 @@ namespace Smartfit_APP.Views.ExercisesMachines
 
                 if (R)
                 {
-                    await DisplayAlert("Success", "Your Muscle was deleted", "OK");
+                    await DisplayAlert("Success", "Your exercise was deleted", "OK");
                     await Navigation.PopAsync();
 
                 }
